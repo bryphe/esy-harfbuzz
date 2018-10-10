@@ -7,7 +7,7 @@
     "build": [
         ["bash", "-c", "#{os == 'windows' ? './esy/configure-windows.sh' : './configure'}"],
         ["make"],
-        ["make", "install"]
+        ["make", "install"],
         ["./esy/test.sh"]
     ],
     "buildsInSource": "_build",

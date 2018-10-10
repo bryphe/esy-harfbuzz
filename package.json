@@ -13,7 +13,7 @@
     "buildsInSource": "_build",
     "exportedEnv": {
         "HARFBUZZ_INCLUDE_PATH": {
-            "val": "#{self.install / 'include' / 'freetype2'}",
+            "val": "#{self.install / 'include' / 'harfbuzz'}",
             "scope": "global"
         },
         "HARFBUZZ_LIB_PATH": {

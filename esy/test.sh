@@ -22,4 +22,4 @@ ls -a $cur__lib
 cp $cur__bin/*.dll .
 
 $CC ./test.c -o ./test $FLAGS -I$INCLUDE -L$cur__lib -lharfbuzz
-./test
+./test Roboto-Regular.ttf test=>text

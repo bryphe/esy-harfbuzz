@@ -1,4 +1,4 @@
-cd esy
+cd _build
 pwd
 
 INCLUDE=$cur__install/include/harfbuzz
@@ -20,5 +20,5 @@ ls -a $cur__lib
 
 cp $cur__bin/*.dll .
 
-$CC ./test.c -o ./test $FLAGS -I$INCLUDE -L$cur__lib -lharfbuzz
-./test Roboto-Regular.ttf test=>text
+$CC ./../esy/test.c -o ./test.exe $FLAGS -I$INCLUDE -L$cur__lib -lharfbuzz
+./test.exe ./../esy/Roboto-Regular.ttf test=>text

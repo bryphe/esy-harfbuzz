@@ -5,7 +5,6 @@ INCLUDE=$cur__install/include/harfbuzz
 
 if which x86_64-w64-mingw32-gcc; then
     CC=x86_64-w64-mingw32-gcc
-    cp /usr/x86_64-w64-mingw32/bin/*.dll .
     # Copy runtime mingw files
     cp /usr/x86_64-w64-mingw32/sys-root/mingw/bin/*.dll .
 else

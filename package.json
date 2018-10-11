@@ -7,11 +7,10 @@
     "build": [
         ["./esy/prep.sh"],
         ["bash", "-c", "#{os == 'windows' ? './esy/configure-windows.sh' : './configure'}"],
-        ["make"],
-        ["make", "install"],
+        ["./esy/build.sh"],
         ["./esy/test.sh"]
     ],
-    "buildsInSource": true,
+    "buildsInSource": "_build",
     "exportedEnv": {
         "HARFBUZZ_INCLUDE_PATH": {
             "val": "#{self.install / 'include' / 'harfbuzz'}",

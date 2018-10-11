@@ -10,7 +10,7 @@
         ["make", "install"],
         ["./esy/test.sh"]
     ],
-    "buildsInSource": "_build",
+    "buildsInSource": true,
     "exportedEnv": {
         "HARFBUZZ_INCLUDE_PATH": {
             "val": "#{self.install / 'include' / 'harfbuzz'}",

@@ -27,5 +27,9 @@ echo "Bin Path: $cur__bin"
 
 cp $cur__bin/*.dll .
 
+# Augment path to pick up libs
+export PATH=$PATH:$cur__bin:$cur__lib
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$cur__lib
+
 $CC $ROOTDIR/esy/test.c -o test.exe -std=c99 -I$INCLUDE -L$cur__lib -lharfbuzz
 ./test.exe $ROOTDIR/esy/Roboto-Regular.ttf "test=>text"

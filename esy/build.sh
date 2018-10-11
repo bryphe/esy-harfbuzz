@@ -1,4 +1,6 @@
 cd _build
-make
+echo "**BUILD STARTED**"
+make build
+echo "**BUILD COMPLETE**"
 make install
 

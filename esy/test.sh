@@ -13,10 +13,9 @@ fi
 
 echo "Using compiler: $CC"
 
-echo "include..."
-ls -a $INCLUDE
-echo "lib.."
-ls -a $cur__lib
+echo "Include Path: $INCLUDE"
+echo "Lib Path: $cur__lib"
+echo "Bin Path: $cur__bin"
 
 cp $cur__bin/*.dll .
 

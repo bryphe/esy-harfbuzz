@@ -5,6 +5,7 @@
   "license": "MIT",
   "esy": {
     "build": [
+        ["./esy/prep.sh"],
         ["bash", "-c", "#{os == 'windows' ? './esy/configure-windows.sh' : './configure'}"],
         ["make"],
         ["make", "install"],

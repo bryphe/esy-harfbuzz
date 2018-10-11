@@ -10,7 +10,7 @@ if which x86_64-w64-mingw32-gcc; then
     cp /usr/x86_64-w64-mingw32/sys-root/mingw/bin/*.dll $BUILDDIR/.
 else
     CC=gcc
-    BUILDDIR=_build
+    BUILDDIR=$(pwd)/_build
 fi
 
 echo "Using build directory: $BUILDDIR"
@@ -27,5 +27,5 @@ echo "Bin Path: $cur__bin"
 
 cp $cur__bin/*.dll .
 
-$CC $ROOTDIR/esy/test.c -o $BUILDDIR/test.exe -I$INCLUDE -L$cur__lib -lharfbuzz
-$BUILDDIR/test.exe $ROOTDIR/esy/Roboto-Regular.ttf "test=>text"
+$CC $ROOTDIR/esy/test.c -o test.exe -I$INCLUDE -L$cur__lib -lharfbuzz
+./test.exe $ROOTDIR/esy/Roboto-Regular.ttf "test=>text"

@@ -18,10 +18,10 @@ jobs:
   steps:
   - script: brew update
   - script: brew install libpng
+  - template: esy-build-steps.yml
   - template: prebuilt-library/publish-platform-prebuilt.yml
     parameters:
       platform: "platform-darwin"
-  - template: esy-build-steps.yml
 
 - job: Windows
   pool:

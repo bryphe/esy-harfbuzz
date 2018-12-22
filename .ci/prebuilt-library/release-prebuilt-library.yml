@@ -2,15 +2,15 @@
 
 steps:
     - script: "mkdir _release"
-    - template: prebuilt-library/download-platform-prebuilt.yml
+    - template: download-platform-prebuilt.yml
       parameters:
           platform: "platform-linux"
 
-    - template: prebuilt-library/download-platform-prebuilt.yml
+    - template: download-platform-prebuilt.yml
       parameters:
           platform: "platform-win32"
 
-    - template: prebuilt-library/download-platform-prebuilt.yml
+    - template: download-platform-prebuilt.yml
       parameters:
           platform: "platform-darwin"
 

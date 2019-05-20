@@ -1,5 +1,5 @@
 {
-  "checksum": "2be2f82f7cadfc860c6fbf3adebaac86",
+  "checksum": "1398e6c5499fa9d4d18ba8b5fc76893b",
   "root": "esy-harfbuzz-2.4.0@link-dev:./package.json",
   "node": {
     "esy-zlib@github:esy-packages/esy-zlib#404929fd8b7ed83ed6a528d751840faff957b4b3@d41d8cd9": {
@@ -12,6 +12,22 @@
         "type": "install",
         "source": [
           "github:esy-packages/esy-zlib#404929fd8b7ed83ed6a528d751840faff957b4b3"
+        ]
+      },
+      "overrides": [],
+      "dependencies": [],
+      "devDependencies": []
+    },
+    "esy-ragel@github:esy-packages/esy-ragel#7f949da4066f399051d9ec6a813773d0eabb036a@d41d8cd9": {
+      "id":
+        "esy-ragel@github:esy-packages/esy-ragel#7f949da4066f399051d9ec6a813773d0eabb036a@d41d8cd9",
+      "name": "esy-ragel",
+      "version":
+        "github:esy-packages/esy-ragel#7f949da4066f399051d9ec6a813773d0eabb036a",
+      "source": {
+        "type": "install",
+        "source": [
+          "github:esy-packages/esy-ragel#7f949da4066f399051d9ec6a813773d0eabb036a"
         ]
       },
       "overrides": [],
@@ -83,6 +99,7 @@
       "overrides": [],
       "dependencies": [
         "esy-zlib@github:esy-packages/esy-zlib#404929fd8b7ed83ed6a528d751840faff957b4b3@d41d8cd9",
+        "esy-ragel@github:esy-packages/esy-ragel#7f949da4066f399051d9ec6a813773d0eabb036a@d41d8cd9",
         "esy-python@github:esy-packages/esy-python#22a58395ae687852fee64ff6e752bd1354a4f343@d41d8cd9",
         "esy-libpng@github:esy-packages/esy-libpng#d846df4a8547b3299c7627773008bd97543d7048@d41d8cd9",
         "esy-bzip2@github:esy-packages/esy-bzip2#048f314334ae2e63b24082a7e4cfca4985b04028@d41d8cd9"

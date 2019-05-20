@@ -11,22 +11,23 @@
       }
     },
     "build": [
-      [
-        "chmod",
-        "755",
-        "./configure"
-      ],
-      "find ./ -exec touch -t 200905010101 {} +",
-      "./configure --disable-dependency-tracking --prefix=$cur__install #{os == 'windows' ? '-host x86_64-w64-mingw32' : ''}",
-      [
-        "make"
-      ],
-      [
-        "make",
-        "install"
-      ]
+      "chmod 755 ./harfbuzz/configure ./freetype2-vendored/configure",
+      "find ./freetype2-vendored -exec touch -t 200905010101 {} +",
+      "find ./harfbuzz -exec touch -t 200905010101 {} +",
+      "./freetype2-vendored/configure --without-harfbuzz --prefix=#{self.install} #{os == 'windows' ? '--host x86_64-w64-mingw32' : ''}",
+      "make",
+      "make install",
+      "make clean",
+      "./harfbuzz/configure --disable-dependency-tracking --prefix=#{self.install} #{os == 'windows' ? '--host x86_64-w64-mingw32' : ''}",
+      "make",
+      "make install"
     ]
   },
-  "dependencies": {},
+  "dependencies": {
+    "esy-zlib": "esy-packages/esy-zlib#404929fd8b7ed83ed6a528d751840faff957b4b3",
+    "esy-libpng": "esy-packages/esy-libpng#d846df4a8547b3299c7627773008bd97543d7048",
+    "esy-bzip2": "esy-packages/esy-bzip2#048f314334ae2e63b24082a7e4cfca4985b04028",
+    "esy-python": "esy-packages/esy-python#22a58395ae687852fee64ff6e752bd1354a4f343"
+  },
   "resolutions": {}
 }

@@ -1,7 +1,76 @@
 {
-  "checksum": "0cc961f41dbf4ff5ab5654751a4ba36e",
+  "checksum": "2be2f82f7cadfc860c6fbf3adebaac86",
   "root": "esy-harfbuzz-2.4.0@link-dev:./package.json",
   "node": {
+    "esy-zlib@github:esy-packages/esy-zlib#404929fd8b7ed83ed6a528d751840faff957b4b3@d41d8cd9": {
+      "id":
+        "esy-zlib@github:esy-packages/esy-zlib#404929fd8b7ed83ed6a528d751840faff957b4b3@d41d8cd9",
+      "name": "esy-zlib",
+      "version":
+        "github:esy-packages/esy-zlib#404929fd8b7ed83ed6a528d751840faff957b4b3",
+      "source": {
+        "type": "install",
+        "source": [
+          "github:esy-packages/esy-zlib#404929fd8b7ed83ed6a528d751840faff957b4b3"
+        ]
+      },
+      "overrides": [],
+      "dependencies": [],
+      "devDependencies": []
+    },
+    "esy-python@github:esy-packages/esy-python#22a58395ae687852fee64ff6e752bd1354a4f343@d41d8cd9": {
+      "id":
+        "esy-python@github:esy-packages/esy-python#22a58395ae687852fee64ff6e752bd1354a4f343@d41d8cd9",
+      "name": "esy-python",
+      "version":
+        "github:esy-packages/esy-python#22a58395ae687852fee64ff6e752bd1354a4f343",
+      "source": {
+        "type": "install",
+        "source": [
+          "github:esy-packages/esy-python#22a58395ae687852fee64ff6e752bd1354a4f343"
+        ]
+      },
+      "overrides": [],
+      "dependencies": [
+        "esy-zlib@github:esy-packages/esy-zlib#404929fd8b7ed83ed6a528d751840faff957b4b3@d41d8cd9",
+        "esy-libffi@github:esy-ocaml/libffi#599bc3567ecf839240977b6d9aaf0b80f983b5aa@d41d8cd9"
+      ],
+      "devDependencies": []
+    },
+    "esy-libpng@github:esy-packages/esy-libpng#d846df4a8547b3299c7627773008bd97543d7048@d41d8cd9": {
+      "id":
+        "esy-libpng@github:esy-packages/esy-libpng#d846df4a8547b3299c7627773008bd97543d7048@d41d8cd9",
+      "name": "esy-libpng",
+      "version":
+        "github:esy-packages/esy-libpng#d846df4a8547b3299c7627773008bd97543d7048",
+      "source": {
+        "type": "install",
+        "source": [
+          "github:esy-packages/esy-libpng#d846df4a8547b3299c7627773008bd97543d7048"
+        ]
+      },
+      "overrides": [],
+      "dependencies": [
+        "esy-zlib@github:esy-packages/esy-zlib#404929fd8b7ed83ed6a528d751840faff957b4b3@d41d8cd9"
+      ],
+      "devDependencies": []
+    },
+    "esy-libffi@github:esy-ocaml/libffi#599bc3567ecf839240977b6d9aaf0b80f983b5aa@d41d8cd9": {
+      "id":
+        "esy-libffi@github:esy-ocaml/libffi#599bc3567ecf839240977b6d9aaf0b80f983b5aa@d41d8cd9",
+      "name": "esy-libffi",
+      "version":
+        "github:esy-ocaml/libffi#599bc3567ecf839240977b6d9aaf0b80f983b5aa",
+      "source": {
+        "type": "install",
+        "source": [
+          "github:esy-ocaml/libffi#599bc3567ecf839240977b6d9aaf0b80f983b5aa"
+        ]
+      },
+      "overrides": [],
+      "dependencies": [],
+      "devDependencies": []
+    },
     "esy-harfbuzz-2.4.0@link-dev:./package.json": {
       "id": "esy-harfbuzz-2.4.0@link-dev:./package.json",
       "name": "esy-harfbuzz-2.4.0",
@@ -10,6 +79,27 @@
         "type": "link-dev",
         "path": ".",
         "manifest": "package.json"
+      },
+      "overrides": [],
+      "dependencies": [
+        "esy-zlib@github:esy-packages/esy-zlib#404929fd8b7ed83ed6a528d751840faff957b4b3@d41d8cd9",
+        "esy-python@github:esy-packages/esy-python#22a58395ae687852fee64ff6e752bd1354a4f343@d41d8cd9",
+        "esy-libpng@github:esy-packages/esy-libpng#d846df4a8547b3299c7627773008bd97543d7048@d41d8cd9",
+        "esy-bzip2@github:esy-packages/esy-bzip2#048f314334ae2e63b24082a7e4cfca4985b04028@d41d8cd9"
+      ],
+      "devDependencies": []
+    },
+    "esy-bzip2@github:esy-packages/esy-bzip2#048f314334ae2e63b24082a7e4cfca4985b04028@d41d8cd9": {
+      "id":
+        "esy-bzip2@github:esy-packages/esy-bzip2#048f314334ae2e63b24082a7e4cfca4985b04028@d41d8cd9",
+      "name": "esy-bzip2",
+      "version":
+        "github:esy-packages/esy-bzip2#048f314334ae2e63b24082a7e4cfca4985b04028",
+      "source": {
+        "type": "install",
+        "source": [
+          "github:esy-packages/esy-bzip2#048f314334ae2e63b24082a7e4cfca4985b04028"
+        ]
       },
       "overrides": [],
       "dependencies": [],

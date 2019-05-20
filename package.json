@@ -11,10 +11,19 @@
       }
     },
     "build": [
-      ["chmod", "755", "./configure"],
-      ["bash", "-c", "#{os == 'windows' ? './configure --prefix=$cur__install --host x86_64-w64-mingw32' : './configure --prefix=$cur__install'}"],
-      ["make"],
-      ["make", "install"]
+      [
+        "chmod",
+        "755",
+        "./configure"
+      ],
+      "./configure --disable-dependency-tracking --prefix=$cur__install #{os == 'windows' ? '-host x86_64-w64-mingw32' : ''}",
+      [
+        "make"
+      ],
+      [
+        "make",
+        "install"
+      ]
     ]
   },
   "dependencies": {},

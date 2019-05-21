@@ -1,0 +1,29 @@
+{
+  "name": "esy-harfbuzz-2.4.0",
+  "version": "0.0.000",
+  "description": "harfbuzz-2.4.0 packaged for esy",
+  "esy": {
+    "buildsInSource": true,
+    "exportedEnv": {
+      "PKG_CONFIG_PATH": {
+        "scope": "global",
+        "val": "#{self.lib / 'pkgconfig' :  }"
+      }
+    },
+    "build": [
+      "chmod 755 ./configure ./freetype2-vendored/configure",
+      "find ./freetype2-vendored -exec touch -t 200905010101 {} +",
+      "./freetype2-vendored/configure --without-harfbuzz --prefix=#{self.install} #{os == 'windows' ? '--host x86_64-w64-mingw32' : ''}",
+      "make -C freetype2-vendored",
+      "make install -C freetype2-vendored"
+    ]
+  },
+  "dependencies": {
+    "esy-zlib": "esy-packages/esy-zlib#404929fd8b7ed83ed6a528d751840faff957b4b3",
+    "esy-libpng": "esy-packages/esy-libpng#d846df4a8547b3299c7627773008bd97543d7048",
+    "esy-harfbuzz": "esy-packages/esy-harfbuzz#4c8e602a063b10d6b81e3c7cc68cb53f1976470c",
+    "esy-bzip2": "esy-packages/esy-bzip2#048f314334ae2e63b24082a7e4cfca4985b04028",
+    "esy-python": "esy-packages/esy-python#22a58395ae687852fee64ff6e752bd1354a4f343"
+  },
+  "resolutions": {}
+}

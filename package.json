@@ -1,34 +1,40 @@
 {
-  "name": "esy-harfbuzz",
-  "version": "1.9.1005",
-  "description": "Mirror of harfbuzz",
-  "license": "MIT",
+  "name": "esy-harfbuzz-2.4.0",
+  "version": "0.0.000",
+  "description": "harfbuzz-2.4.0 packaged for esy",
   "esy": {
-    "build": [
-        ["./esy/prep.sh"],
-        ["bash", "-c", "#{os == 'windows' ? './esy/configure-windows.sh' : './esy/configure.sh'}"],
-        ["./esy/build.sh"]
-    ],
-    "buildsInSource": "_build",
+    "buildsInSource": true,
     "exportedEnv": {
-        "HARFBUZZ_INCLUDE_PATH": {
-            "val": "#{self.install / 'include' / 'harfbuzz'}",
-            "scope": "global"
-        },
-        "HARFBUZZ_LIB_PATH": {
-            "val": "#{self.lib}",
-            "scope": "global"
-        },
-        "HARFBUZZ_BIN_PATH": {
-            "val": "#{self.bin}",
-            "scope": "global"
-        }
-    }
+      "PKG_CONFIG_PATH": {
+        "scope": "global",
+        "val": "#{self.lib / 'pkgconfig' : $PKG_CONFIG_PATH }"
+      }
+    },
+    "buildEnv": {
+      "LD_LIBRARY_PATH": "#{pcre.lib}:$LD_LIBRARY_PATH",
+      "PKG_CONFIG_PATH": "#{self.lib / 'pkgconfig' : esy-libpng.lib / 'pkgconfig' : glib.lib / 'pkgconfig'}"
+    },
+    "build": [
+      "chmod 755 ./harfbuzz/configure ./freetype2-vendored/configure",
+      "find ./freetype2-vendored -exec touch -t 200905010101 {} +",
+      "find ./harfbuzz -exec touch -t 200905010101 {} +",
+      "./freetype2-vendored/configure --without-harfbuzz --prefix=#{self.install} #{os == 'windows' ? '--host x86_64-w64-mingw32' : ''}",
+      "make",
+      "make install",
+      "make clean",
+      "./harfbuzz/configure --disable-dependency-tracking --prefix=#{self.install} #{os == 'windows' ? '--host x86_64-w64-mingw32' : ''}",
+      "make",
+      "make install"
+    ]
   },
   "dependencies": {
-      "esy-cmake": "^0.3.2"
+    "glib": "prometheansacrifice/esy-glib#b133b09d13178143e2ad916f7ee10ce88695be9d",
+    "pcre": "esy-packages/esy-pcre#c5076c8facbebaf5f5718c0e270418fd218add7e",
+    "esy-zlib": "esy-packages/esy-zlib#404929fd8b7ed83ed6a528d751840faff957b4b3",
+    "esy-libpng": "esy-packages/esy-libpng#d846df4a8547b3299c7627773008bd97543d7048",
+    "esy-bzip2": "esy-packages/esy-bzip2#048f314334ae2e63b24082a7e4cfca4985b04028",
+    "esy-python": "esy-packages/esy-python#22a58395ae687852fee64ff6e752bd1354a4f343",
+    "esy-ragel": "esy-packages/esy-ragel#7f949da4066f399051d9ec6a813773d0eabb036a"
   },
-  "devDependencies": {
-      "esy-cmake": "^0.3.2"
-  }
+  "resolutions": {}
 }

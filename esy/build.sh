@@ -15,7 +15,7 @@ touch src/harfbuzz-icu.def
 touch src/harfbuzz-gobject.def
 
 echo "**BUILD STARTED**"
-CFLAGS=-fPIC make
+make
 echo "**BUILD COMPLETE**"
-CFLAGS=-fPIC make install
+make install
 
